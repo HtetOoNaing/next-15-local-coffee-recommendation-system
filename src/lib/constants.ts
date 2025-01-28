@@ -1,4 +1,6 @@
-export const ROAST_LEVEL_OPTIONS = [
+import { OptionType } from "./types";
+
+export const ROAST_LEVEL_OPTIONS: OptionType[] = [
   {
     value: "",
     label: "Select Roast Level",
@@ -25,7 +27,7 @@ export const ROAST_LEVEL_OPTIONS = [
   },
 ];
 
-export const GROUND_TYPE_OPTIONS = [
+export const GROUND_TYPE_OPTIONS: OptionType[] = [
   {
     value: "",
     label: "Select Ground Type",
@@ -44,7 +46,7 @@ export const GROUND_TYPE_OPTIONS = [
   },
 ];
 
-export const FRAGRANCE_OPTIONS = [
+export const FRAGRANCE_OPTIONS: OptionType[] = [
   {
     value: "",
     label: "Select Fragrance",
@@ -71,7 +73,7 @@ export const FRAGRANCE_OPTIONS = [
   },
 ];
 
-export const FLAVOR_OPTIONS = [
+export const FLAVOR_OPTIONS: OptionType[] = [
   {
     value: "",
     label: "Select Flavor",
@@ -98,7 +100,7 @@ export const FLAVOR_OPTIONS = [
   },
 ];
 
-export const BODY_OPTIONS = [
+export const BODY_OPTIONS: OptionType[] = [
   {
     value: "",
     label: "Select Body",
@@ -123,4 +125,12 @@ export const BODY_OPTIONS = [
     value: "66c4d634c0935cb1598e78d8",
     label: "Heavy",
   },
+];
+
+export const FILTER_FEATURES: string[] = [
+  "Roast",
+  "Fragrance",
+  "Ground Type",
+  "Body",
+  "Flavor",
 ];
