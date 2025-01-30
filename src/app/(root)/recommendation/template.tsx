@@ -3,6 +3,7 @@ import FilterSidebar from "@/components/homepage/filter-sidebar";
 import { useCoffee } from "@/contexts/coffee-context";
 import axiosInstance from "@/lib/axios-instance";
 import { CoffeeType } from "@/lib/types";
+import { usePathname, useRouter } from "next/navigation";
 
 interface CoffeeFormProps {
   children: React.ReactNode;
@@ -19,6 +20,8 @@ const images = [
 ];
 
 const Layout: React.FC<CoffeeFormProps> = ({ children }) => {
+  const pathname = usePathname();
+  const router = useRouter();
   const { setCoffeeList, filters } = useCoffee();
 
   const handleRecommend = async () => {
@@ -47,6 +50,9 @@ const Layout: React.FC<CoffeeFormProps> = ({ children }) => {
 
       localStorage.setItem("coffeeList", JSON.stringify(coffeesWithImage));
       localStorage.setItem("filters", JSON.stringify(filters));
+      if(pathname !== '/recommendation') {
+        router.push('/recommendation');
+      }
     } catch (error) {
       console.error("Error fetching recommendations:", error);
     }
