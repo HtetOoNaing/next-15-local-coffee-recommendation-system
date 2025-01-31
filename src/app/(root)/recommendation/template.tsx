@@ -19,7 +19,7 @@ const images = [
   "coffee-cup-6.jpeg",
 ];
 
-const Layout: React.FC<CoffeeFormProps> = ({ children }) => {
+const Template: React.FC<CoffeeFormProps> = ({ children }) => {
   const pathname = usePathname();
   const router = useRouter();
   const { setCoffeeList, filters } = useCoffee();
@@ -50,8 +50,8 @@ const Layout: React.FC<CoffeeFormProps> = ({ children }) => {
 
       localStorage.setItem("coffeeList", JSON.stringify(coffeesWithImage));
       localStorage.setItem("filters", JSON.stringify(filters));
-      if(pathname !== '/recommendation') {
-        router.push('/recommendation');
+      if (pathname !== "/recommendation") {
+        router.push("/recommendation");
       }
     } catch (error) {
       console.error("Error fetching recommendations:", error);
@@ -68,4 +68,4 @@ const Layout: React.FC<CoffeeFormProps> = ({ children }) => {
   );
 };
 
-export default Layout;
+export default Template;
