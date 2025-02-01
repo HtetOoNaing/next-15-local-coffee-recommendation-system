@@ -7,11 +7,8 @@ const CoffeeDetails: React.FC<{ params: Promise<{ slug: string }> }> = async ({
   params,
 }) => {
   const slug = (await params).slug;
-  if (!slug) return <p>Coffee not found</p>;
+  const { data: coffee } = await axiosInstance.get<CoffeeType>(`/coffees/${slug}`);
 
-  const { status, data: coffee } = await axiosInstance.get<CoffeeType>(`/coffees/${slug}`);
-  console.log('status', status);
-  console.log('coffee', coffee);
   coffee.thumbnail = "images/coffees/coffee-cup-1.jpg";
   const coffeeItems = [
     { label: "Product Name: ", value: coffee.class_name },
