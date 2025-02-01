@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Button from "@/components/inputs/button";
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -19,18 +20,8 @@ export default function Error({ error, reset }: ErrorProps) {
     <main className="flex h-[90vh] w-full flex-col items-center justify-center">
       <h2 className="text-center">Something went wrong!!</h2>
       <div className="mt-4 flex gap-4">
-        <button
-          className="rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-400"
-          onClick={reset}
-        >
-          Try Again
-        </button>
-        <button
-          className="rounded-md bg-gray-100 px-4 py-2 text-sm text-blue-500 transition-colors hover:bg-blue-100 border border-blue-500"
-          onClick={() => router.back()}
-        >
-          Go Back
-        </button>
+        <Button onClick={reset} variant="solid">Try Again</Button>
+        <Button onClick={() => router.back()} variant="outline">Go Back</Button>
       </div>
     </main>
   );

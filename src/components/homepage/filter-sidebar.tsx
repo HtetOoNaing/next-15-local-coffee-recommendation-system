@@ -1,7 +1,10 @@
+"use client";
+
 import { useCoffee } from "@/contexts/coffee-context";
 import { FILTER_FEATURES } from "@/lib/constants";
 import { RecommendationFiltersType } from "@/lib/types";
 import { getFilterOptions } from "@/lib/utils";
+import Button from "../inputs/button";
 
 type FilterSidebarProps = {
   onRecommend: () => void;
@@ -56,17 +59,14 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ onRecommend }) => {
         );
       })}
       <div className="bg-white sticky bottom-0 py-2">
-        <button
+        <Button
+          className="mb-1.5 w-full py-2.5"
           onClick={onRecommend}
           disabled={isDisabled}
-          className={`bg-[#A53F3F] mb-2 px-4 py-2.5 w-full rounded-lg duration-200 text-white ${
-            isDisabled
-              ? "opacity-50 cursor-not-allowed"
-              : "hover:opacity-85 hover:scale-105"
-          }`}
+          variant="solid"
         >
           Recommend
-        </button>
+        </Button>
       </div>
     </div>
   );
