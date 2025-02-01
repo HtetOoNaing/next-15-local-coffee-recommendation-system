@@ -20,7 +20,7 @@ const Header: React.FC = () => {
           <Image
             src="/images/coffee-logo.png"
             alt="Logo"
-            className="w-14"
+            className="w-auto h-auto"
             width={56}
             height={56}
           />
